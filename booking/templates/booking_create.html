@@ -1,0 +1,47 @@
+{% extends 'base.html' %}
+{% load crispy_forms_tags %}
+
+{% block title %}
+    Booking Form
+{% endblock %}
+
+{% block content %}
+<div class="container mt-3">
+    <div class="row justify-content-center">
+      <div class="col-md-8">
+        <div class="card border-white rounded-0 shadow">
+          <div class="card-header bg-light rounded-top">
+            <h4 class="mb-0">Booking Now</h4>
+          </div>
+          <div class="card-body bg-light rounded-bottom">
+            {% if messages %}
+              {% for message in messages %}
+                <div class="alert alert-{{ message.tags }}">{{ message }}</div>
+              {% endfor %}
+            {% endif %}
+            <form method="post" novalidate style="width: 70%;">
+              {% csrf_token %}
+    <div class="row">
+      <div class="col-md-6">{{ form.name|as_crispy_field }}</div>
+      <div class="col-md-6">{{ form.age|as_crispy_field }}</div>
+      <div class="col-md-6">{{ form.phone_number|as_crispy_field }}</div>
+      
+      <div class="col-md-6">{{ form.start_time|as_crispy_field }}</div>
+    </div>
+<div class="row">
+    <div class="col-md-3">{{ form.hair_care|as_crispy_field }}</div>
+    <div class="col-md-3">{{ form.face_care|as_crispy_field }}</div>
+    <div class="col-md-3">{{ form.body_care|as_crispy_field }}</div>
+    <div class="col-md-3">{{ form.all_services|as_crispy_field }}</div>
+    
+  </div>
+  <div><hr style="border: 1px solid #007bff;"></div>
+  <button type="submit">Submit</button>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<br>
+{% endblock %}

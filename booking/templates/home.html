@@ -1,0 +1,175 @@
+{% extends 'base.html' %}
+{% load crispy_forms_tags %}
+
+{% block title %}
+    Booking Form
+{% endblock %}
+
+{% block content %}
+<style>
+    .fa-cut {
+        color: #ff0000; /* Red */
+    }
+
+    .fa-waves {
+        color: #00ff00; /* Green */
+    }
+
+    .fa-spa {
+        color: #0000ff; /* Blue */
+    }
+
+    .fa-people-arrows {
+        color: #ff00ff; /* Magenta */
+    }
+
+    .fa-makeup-brush {
+        color: #ffa500; /* Orange */
+    }
+
+    .fa-fire {
+        color: #800080; /* Purple */
+    }
+
+    .fa-eye {
+        color: #008000; /* Dark Green */
+    }
+
+    .fa-hand-paper {
+        color: #ffff00; /* Yellow */
+    }
+
+    .fa-ring {
+        color: #800000; /* Maroon */
+    }
+    
+    .fa-cut {
+        color: #ff0000; /* Red */
+    }
+
+    .fa-waves {
+        color: #00ff00; /* Green */
+    }
+
+</style>
+
+
+<div class=" row bg-warning">
+    <div class="container col-md-4">
+        <h1 class=" text-center"><a href="{% url 'booking_create' %}"> Booking Now</a></h1> 
+    </div>
+</div>
+<br>
+<main>
+    <section>
+        <div class="container">
+            
+
+            <div class="important-services">
+                <h3 class="text-center">Why Choose Us?</h3>
+                <div class="row">
+                    <div class="col-md-4">
+                        <div class="service-item">
+                            <i class="fas fa-check-circle fa-2x text-primary"></i>
+                            <p class="service-description">We have the best services</p>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="service-item">
+                            <i class="fas fa-check-circle fa-2x text-success"></i>
+                            <p class="service-description">We have highly skilled professionals</p>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="service-item">
+                            <i class="fas fa-check-circle fa-2x text-danger"></i>
+                            <p class="service-description">We use the best materials</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <h2>Our Services</h2>
+            <div class="row">
+                <div class="col-md-4">
+                    <ul>
+                        <li>
+                            <i class="fas fa-cut fa-3x text-primary"></i>
+                            <h3>Hair Services</h3>
+                            <p>
+                                Cut & Finish, Color: High Lights, Low Lights, Henna. Essential Styling.
+                            </p>
+                        </li>
+                        <li>
+                            <i class="fas fa-waves fa-3x text-info"></i>
+                            <h3>Hair Straightening</h3>
+                            <p>
+                                Keune Hair Straightening, Keune Keratin, Jean de Perle, Collagen.
+                            </p>
+                        </li>
+                        <li>
+                            <i class="fas fa-spa fa-3x text-success"></i>
+                            <h3>Hair Treatment</h3>
+                            <p>
+                                Offering a range of luxurious hair treatments and oils from Lazartigue and Kerastase to tackle all hair problems including thinning, breakage, dry hair and scalp.
+                            </p>
+                        </li>
+                    </ul>
+                </div>
+                <div class="col-md-4">
+                    <ul>
+                        <li>
+                            <i class="fas fa-people-arrows fa-3x text-warning"></i>
+                            <h3>Hair Extensions</h3>
+                            <p>
+                                Quality hair for instant length and volume, giving a natural look. All types of hair extensions are available.
+                            </p>
+                        </li>
+                        <li>
+                            <i class="fas fa-makeup-brush fa-3x text-secondary"></i>
+                            <h3>Makeup</h3>
+                            <p>
+                                Makeup services for any occasion and special Bridal Makeup in Salon or Home Service.
+                            </p>
+                        </li>
+                        <li>
+                            <i class="fas fa-fire fa-3x text-danger"></i>
+                            <h3>Wax</h3>
+                            <p>
+                                Professional waxing services for smooth and hair-free skin.
+                            </p>
+                        </li>
+                    </ul>
+                </div>
+                <div class="col-md-4">
+                    <ul>
+                        <li>
+                            <i class="fas fa-eye fa-3x"></i>
+                            <h3>Esthetic Tattoo</h3>
+                            <p>
+                                Eyebrows, Eyes & Lip Liners.
+                            </p>
+                        </li>
+                        <li>
+                            <i class="fas fa-hand-paper fa-3x"></i>
+                            <h3>Threading</h3>
+                            <p>
+                                Expert threading services for precise shaping and grooming.
+                            </p>
+                        </li>
+                        <li>
+                            <i class="fas fa-ring fa-3x"></i>
+                            <h3>Manicure & Pedicure</h3>
+                            <p>
+                                Pamper your hands and feet with our professional manicure and pedicure services.
+                            </p>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+</main>
+<!-- end new code -->
+
+{% endblock %}

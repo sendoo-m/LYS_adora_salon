@@ -1,0 +1,80 @@
+{% extends 'base.html' %}
+{% block title %}
+ Dashboard Booking
+{% endblock %}
+{% block content %}
+<div class="container mt-3">
+    <div class="row justify-content-center">
+      <div class="col-md-10">
+        <div class="card border-white rounded-0 shadow">
+          <div class="card-header bg-light rounded-top">
+            <h4 class="mb-0">Booking Dashboard</h4>
+          </div>
+          <div class="card-body bg-light rounded-bottom">
+<table class="table">
+    <thead>
+        <tr>
+            <th>Name</th>
+            <th>Date</th>
+            <th>Start Time</th>
+            <th>Phone</th>
+            <th>Actions</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for booking in bookings %}
+        <tr>
+            <td>{{ booking.name }}</td>
+            <td>{{ booking.date }}</td>
+            <td>{{ booking.start_time }}</td>
+            <td>{{ booking.phone_number }}</td>
+            
+            <td>
+                <form action="{% url 'is_approved' booking.id %}" method="POST" id="approvalForm{{ booking.id }}">
+                    {% csrf_token %}
+                    <input type="checkbox" name="is_approved" id="approvalCheckbox{{ booking.id }}" {% if booking.is_approved %}checked{% endif %} onclick="toggleApproval({{ booking.id }})">
+                    <button type="submit" id="approvalButton{{ booking.id }}">{% if booking.is_approved %}تاكيد الحجز{% else %}الغاء الحجز{% endif %}</button>
+                </form>
+            </td>
+            
+        </tr>
+        {% endfor %}
+    </tbody>
+</table>
+</div>
+</div>
+</div>
+</div>
+
+<div class="pagination">
+    <ul class="pagination justify-content-center">
+        {% if bookings.has_previous %}
+        <li class="page-item">
+            <a class="page-link" href="?page={{ bookings.previous_page_number }}">Previous</a>
+        </li>
+        {% endif %}
+        {% for i in bookings.paginator.page_range %}
+        <li class="page-item {% if bookings.number == i %}active{% endif %}">
+            <a class="page-link" href="?page={{ i }}">{{ i }}</a>
+        </li>
+        {% endfor %}
+        {% if bookings.has_next %}
+        <li class="page-item">
+            <a class="page-link" href="?page={{ bookings.next_page_number }}">Next</a>
+        </li>
+        {% endif %}
+    </ul>
+</div>
+
+<script>
+    function toggleApproval(bookingId) {
+        var approvalCheckbox = document.getElementById('approvalCheckbox' + bookingId);
+        var approvalButton = document.getElementById('approvalButton' + bookingId);
+        if (approvalCheckbox.checked) {
+            approvalButton.innerHTML = 'تاكيد الحجز';
+        } else {
+            approvalButton.innerHTML = 'الغاء الحجز';
+        }
+    }
+</script>
+{% endblock %}

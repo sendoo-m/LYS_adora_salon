@@ -1,0 +1,64 @@
+    .carousel-item {
+      height: 800px;
+    }
+
+    .carousel-item img {
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .carousel-control-prev-icon, .carousel-control-next-icon {
+      height: 50px;
+      width: 50px;
+      background-size: 100%, 100%;
+      border-radius: 50%;
+      border: 1px solid #ddd;
+    }
+
+    .carousel-control-prev-icon {
+      background-image: url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='%23333' viewBox='0 0 8 8'%3E%3Cpath d='M5.25 0l-4 4 4 4 1.5-1.5-2.5-2.5 2.5-2.5-1.5-1.5z'/%3E%3C/svg%3E");
+    }
+
+    .carousel-control-next-icon {
+      background-image: url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='%23333' viewBox='0 0 8 8'%3E%3Cpath d='M2.75 0l-1.5 1.5 2.5 2.5-2.5 2.5 1.5 1.5 4-4-4-4z'/%3E%3C/svg%3E");
+    }
+
+
+    .social-bar {
+        background-color: rgb(246, 247, 216);
+        padding: 10px;
+    }
+    
+    .social-bar ul {
+        list-style: none;
+        margin: 0;
+        padding: 0;
+        display: flex;
+        justify-content: flex-end;
+    }
+    
+    .social-bar ul li {
+        margin-right: 10px;
+    }
+    
+    .social-bar ul li a i {
+        font-size: 24px;
+    }
+    
+    .phone-number {
+        display: flex;
+        align-items: center;
+        justify-content: flex-end;
+    }
+    
+    .phone-number span {
+        margin-left: 5px;
+    }
+
+    .logo-img {
+      width: auto;
+      height: 100px;
+      max-width: 100%;
+  }
+  
+  
